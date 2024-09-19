@@ -81,15 +81,9 @@ function News() {
   return (
     <div>
       <Header title="Latest News" subtitle="Covering March & April 2022" />
-      <Card 
-        { ...someNews[0]}
-      />
-      <Card 
-        {...someNews[1]}
-      />
-      <Card 
-        {...someNews[2]}
-      />
+      {someNews.map((news) => (
+        <Card {...news} key={news.title}/>
+      ))}
     </div>
   );
 }
